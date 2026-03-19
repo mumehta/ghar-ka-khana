@@ -1,21 +1,134 @@
-const joinSectionLink = '#join';
-const whatsappLink = '#';
+const primaryCtaLink = '#join';
 
 const heroBenefits = [
   {
-    symbol: 'FP',
-    title: 'Freshly prepared',
-    text: 'Cooked with care in small, home-style batches.',
+    symbol: 'FD',
+    title: 'Fresh daily',
+    text: 'Home-style Indian meals prepared in small batches for fresh, balanced eating.',
   },
   {
-    symbol: 'LS',
-    title: 'Low oil and spices',
-    text: 'Balanced flavors that feel light, familiar, and comforting.',
+    symbol: 'RH',
+    title: 'Rouse Hill local',
+    text: 'Pickup and local delivery available within 5 km of Rouse Hill, NSW.',
   },
   {
-    symbol: 'QO',
-    title: 'Quality oils only',
-    text: 'Prepared using desi ghee or olive oil only.',
+    symbol: 'FR',
+    title: 'Free delivery $40+',
+    text: 'Order from $20, with free local delivery on orders of $40 or more.',
+  },
+];
+
+const menuItems = [
+  {
+    name: 'Veg Thali',
+    price: '$12',
+    tag: 'Best seller',
+    description: 'Dal, seasonal sabzi, jeera rice, 3 rotis, salad, and pickle.',
+  },
+  {
+    name: 'Dal + Sabzi + Roti Pack',
+    price: '$14',
+    tag: 'Weekday favorite',
+    description: 'Comfort meal box with dal, sabzi, and 4 soft rotis for lunch or dinner.',
+  },
+  {
+    name: 'Family Dinner Pack',
+    price: '$28',
+    tag: 'Serves 2 to 3',
+    description: 'Two curries, jeera rice, 8 rotis, salad, and achar for an easy family meal.',
+  },
+  {
+    name: 'Snack Add-On Box',
+    price: '$8',
+    tag: 'Add to any order',
+    description: 'Fresh snack add-on such as samosas or a simple dessert, depending on the menu drop.',
+  },
+];
+
+const orderingSteps = [
+  {
+    number: '01',
+    title: 'Choose your meals',
+    text: 'Pick from the weekly menu and decide whether you want pickup or delivery.',
+  },
+  {
+    number: '02',
+    title: 'Order on WhatsApp',
+    text: 'Send your order with your suburb and preferred time in one quick message.',
+  },
+  {
+    number: '03',
+    title: 'Confirm delivery or pickup',
+    text: 'You will get confirmation for delivery eligibility, pickup, and your final order total.',
+  },
+  {
+    number: '04',
+    title: 'Enjoy fresh home-style food',
+    text: 'Your food is packed fresh for local pickup or delivery around Rouse Hill.',
+  },
+];
+
+const serviceCards = [
+  {
+    title: 'Delivery zone',
+    text: 'Within 5 km of Rouse Hill, NSW for local neighborhood orders.',
+  },
+  {
+    title: 'Minimum order',
+    text: '$20 minimum order for all deliveries and pickups.',
+  },
+  {
+    title: 'Delivery fees',
+    text: 'Free delivery on orders above $40 within the service radius.',
+  },
+  {
+    title: 'Menu timing',
+    text: 'Fresh menu updates are shared through WhatsApp so you can order what is available that week.',
+  },
+];
+
+const trustPoints = [
+  {
+    title: 'Prepared fresh daily',
+    text: 'Meals are cooked in small batches so they stay fresh, comforting, and home-style.',
+  },
+  {
+    title: 'Low oil and balanced spice',
+    text: 'The cooking style is lighter and more balanced, making it easy to enjoy through the week.',
+  },
+  {
+    title: 'Desi ghee or olive oil only',
+    text: 'Only desi ghee or olive oil is used for a cleaner, more thoughtful home-cooking style.',
+  },
+  {
+    title: 'Clean home-kitchen handling',
+    text: 'Every order is prepared with careful handling and clean packing for pickup or delivery.',
+  },
+  {
+    title: 'Packed for reliability',
+    text: 'Meals are portioned properly and packed well so they travel comfortably for local orders.',
+  },
+  {
+    title: 'Allergen questions welcomed',
+    text: 'You can ask about ingredients, spice level, and dietary preferences before placing your order.',
+  },
+];
+
+const choiceCards = [
+  {
+    tag: 'Everyday comfort',
+    title: 'Made for weekday lunches and family dinners',
+    text: 'The menu is built around meals people actually want to eat regularly, not just once in a while.',
+  },
+  {
+    tag: 'Simple ordering',
+    title: 'Clear pricing and local delivery',
+    text: 'You can see the menu, understand the minimum order, and know the delivery area before you order.',
+  },
+  {
+    tag: 'Homemade feel',
+    title: 'Familiar Indian food without takeaway heaviness',
+    text: 'The offer is designed for people who miss the warmth and simplicity of proper ghar ka khana.',
   },
 ];
 
@@ -23,60 +136,44 @@ const foodImages = [
   {
     src: 'https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&w=1200&q=80',
     alt: 'Indian home-style thali with curries, roti, rice, and chutneys',
-    title: 'Comfort on a plate',
-    text: 'A wholesome Indian thali that immediately signals home, warmth, and proper nourishment.',
+    title: 'A plate that feels like home',
+    text: 'Comforting combinations of dal, sabzi, rice, roti, and accompaniments that feel familiar and satisfying.',
   },
   {
     src: 'https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=1200&q=80',
     alt: 'Fresh samosas and chutneys served on a wooden platter',
-    title: 'Simple food done right',
-    text: 'Soft rotis, rich curry, and the kind of presentation that feels homemade instead of commercial.',
+    title: 'Warm snacks and weekday add-ons',
+    text: 'Snack add-ons and small extras make it easy to build a complete meal for one person or the whole family.',
   },
   {
     src: 'https://images.unsplash.com/photo-1631452180519-c014fe946bc7?auto=format&fit=crop&w=1200&q=80',
     alt: 'Indian curry and rice plated like a homemade family meal',
-    title: 'The taste of back home',
-    text: 'Warm colors, familiar textures, and food that looks like someone cooked it with care.',
+    title: 'Familiar, reliable, local',
+    text: 'Food that looks warm, homemade, and ready for the kind of repeat ordering people want from a local kitchen.',
   },
 ];
 
-const reasonsToCare = [
-  'They want food that feels healthier and more balanced than takeaway.',
-  'They miss authentic Indian home-style cooking.',
-  'They value convenience without giving up quality.',
-  'They prefer buying from a trusted local home business.',
-];
-
-const differenceCards = [
+const faqs = [
   {
-    label: 'Made fresh',
-    title: 'Cooked fresh, not reheated',
-    text: 'Meals are freshly prepared instead of mass-produced or held like generic takeaway.',
+    question: 'Where do you deliver?',
+    answer: 'Orders are served within 5 km of Rouse Hill, NSW, with local pickup and delivery options.',
   },
   {
-    label: 'Everyday comfort',
-    title: 'A lighter home-style profile',
-    text: 'Lower oil and spice levels keep the food approachable for frequent weekday eating.',
+    question: 'What is the minimum order?',
+    answer: 'The minimum order is $20. Delivery is free once the order total reaches $40 or more.',
   },
   {
-    label: 'Trust signal',
-    title: 'Thoughtful ingredients',
-    text: 'Using desi ghee or olive oil only gives the offer a clear quality position.',
+    question: 'What kind of meals can I expect?',
+    answer: 'Home-style Indian comfort food such as dal, sabzi, rice, rotis, snack add-ons, and family meal packs.',
   },
   {
-    label: 'Service model',
-    title: 'For neighbors, not the masses',
-    text: 'The business feels local, familiar, and personal rather than anonymous food delivery at scale.',
+    question: 'How are order timings shared?',
+    answer: 'Menu drops and ordering updates are shared on WhatsApp so you can check the latest availability before ordering.',
   },
-];
-
-const nextSteps = [
-  'Weekly or daily sample menu',
-  'Delivery suburbs or pickup details',
-  'Order cut-off times',
-  'Pricing or meal plan options',
-  'Food photos and kitchen presentation',
-  'Trust markers such as testimonials or hygiene details',
+  {
+    question: 'Can I ask about ingredients or spice level?',
+    answer: 'Yes. Ingredient questions, allergen checks, and spice preferences can be confirmed before the order is finalized.',
+  },
 ];
 
 function App() {
@@ -87,30 +184,45 @@ function App() {
           <nav className="site-nav">
             <div className="brand">
               <div className="brand__name">Ghar Ka Khana</div>
-              <div className="brand__tag">Indian home-style meals for your neighborhood</div>
+              <div className="brand__tag">Indian home-style meals around Rouse Hill, NSW</div>
             </div>
 
-            <a className="button button--dark" href={joinSectionLink}>
-              Join WhatsApp Group
+            <a className="button button--dark" href={primaryCtaLink}>
+              Start Your Order
             </a>
           </nav>
 
           <div className="hero-grid">
             <div className="hero-copy">
-              <div className="eyebrow">Goodbye Takeout, Hello Ghar Ka Khana</div>
-              <h1>Fresh Indian home-cooked food, made with care.</h1>
+              <div className="eyebrow">Home-style Indian meals for busy local households</div>
+              <h1>Fresh Indian comfort food for pickup and local delivery in Rouse Hill.</h1>
               <p className="lead">
-                Bringing the warmth of the Indian home kitchen to your local community
-                with wholesome meals that feel familiar, comforting, and made just right.
+                Enjoy wholesome Indian meals made with a homemade touch, lighter cooking,
+                and pricing that makes weekday ordering simple.
               </p>
 
               <div className="hero-actions">
-                <a className="button button--accent" href={joinSectionLink}>
-                  Join the Group
+                <a className="button button--accent" href="#menu">
+                  View This Week&apos;s Menu
                 </a>
-                <a className="button button--ghost" href="#about">
-                  Learn More
+                <a className="button button--ghost" href="#delivery">
+                  Delivery &amp; Order Rules
                 </a>
+              </div>
+
+              <div className="hero-price-strip">
+                <div className="price-pill">
+                  <span>Starting from</span>
+                  <strong>$12</strong>
+                </div>
+                <div className="price-pill">
+                  <span>Minimum order</span>
+                  <strong>$20</strong>
+                </div>
+                <div className="price-pill">
+                  <span>Free delivery</span>
+                  <strong>$40+</strong>
+                </div>
               </div>
 
               <div className="hero-benefits">
@@ -128,22 +240,22 @@ function App() {
               <img src={foodImages[0].src} alt={foodImages[0].alt} />
               <div className="hero-panel__body">
                 <div className="hero-callout">
-                  <div className="hero-callout__label">Today&apos;s feel</div>
-                  <h2>Just like mom makes</h2>
+                  <div className="hero-callout__label">Fresh this week</div>
+                  <h2>Simple meals, clear pricing, local delivery.</h2>
                   <p>
-                    Simple, nourishing Indian meals for busy weekdays, family dinners,
-                    and anyone missing proper home food.
+                    From quick weekday dinners to family meal packs, Ghar Ka Khana is
+                    designed to make ordering fresh Indian food feel easy and familiar.
                   </p>
                 </div>
 
                 <div className="hero-panel__meta">
                   <div className="meta-card">
-                    <div className="meta-card__label">Best for</div>
-                    <h3>Professionals, students, families</h3>
+                    <div className="meta-card__label">Service area</div>
+                    <h3>5 km around Rouse Hill, NSW</h3>
                   </div>
                   <div className="meta-card">
-                    <div className="meta-card__label">Service style</div>
-                    <h3>Neighborhood pickup and delivery</h3>
+                    <div className="meta-card__label">Ordering rule</div>
+                    <h3>$20 minimum, free delivery above $40</h3>
                   </div>
                 </div>
               </div>
@@ -153,54 +265,114 @@ function App() {
       </header>
 
       <main>
-        <section className="section section--cream" id="about">
-          <div className="section-shell split-grid">
-            <div className="section-copy">
-              <div className="eyebrow-text">About the kitchen</div>
-              <h2>A home kitchen business built on trust, taste, and simplicity.</h2>
+        <section className="section section--cream" id="menu">
+          <div className="section-shell">
+            <div className="section-copy section-copy--wide">
+              <div className="eyebrow-text">This week&apos;s menu</div>
+              <h2>Choose from comforting meals made for everyday eating.</h2>
               <p>
-                This business is for people who want Indian food that feels homemade
-                rather than commercial. The positioning is clear: fresh meals, lighter
-                cooking, familiar taste, and ingredients chosen with more care than
-                typical takeaway.
-              </p>
-              <p>
-                The strongest appeal here is not restaurant food. It is comfort,
-                consistency, and the emotional value of ghar ka khana for busy
-                households and individuals in the community.
+                From individual thalis to family dinner packs, the menu is built to make
+                lunch and dinner simple for busy homes around Rouse Hill.
               </p>
             </div>
 
-            <div className="stack">
-              <article className="list-card">
-                <h3>Why people will care</h3>
-                <ul>
-                  {reasonsToCare.map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
-              </article>
+            <div className="menu-grid">
+              {menuItems.map((item) => (
+                <article className="menu-card" key={item.name}>
+                  <div className="menu-card__header">
+                    <div>
+                      <div className="menu-card__tag">{item.tag}</div>
+                      <h3>{item.name}</h3>
+                    </div>
+                    <div className="menu-card__price">{item.price}</div>
+                  </div>
+                  <p>{item.description}</p>
+                </article>
+              ))}
+            </div>
 
-              <article className="message-card">
-                <h3>Core brand message</h3>
-                <p>
-                  Warm, honest, neighborhood-focused Indian home cooking made with
-                  thoughtful ingredients and a homemade touch.
-                </p>
-              </article>
+            <div className="section-note">
+              Menu selections may change through the week based on availability. Check
+              WhatsApp for the latest dishes and ordering updates.
             </div>
           </div>
         </section>
 
-        <section className="section">
+        <section className="section" id="how-it-works">
           <div className="section-shell">
-            <div className="section-copy">
-              <div className="eyebrow-text">Food that feels like home</div>
-              <h2>Images that trigger memory, comfort, and appetite.</h2>
+            <div className="section-copy section-copy--wide">
+              <div className="eyebrow-text">How ordering works</div>
+              <h2>Ordering is simple from the very first message.</h2>
               <p>
-                This business sells emotion as much as food. The visuals need to remind
-                people of a meal served at home, not a generic takeaway container. That
-                is what creates the pull.
+                Pick your meals, send your order, and get a quick confirmation for pickup
+                or delivery. Everything is designed to keep ordering easy.
+              </p>
+            </div>
+
+            <div className="steps-grid">
+              {orderingSteps.map((step) => (
+                <article className="step-card" key={step.number}>
+                  <div className="step-card__number">{step.number}</div>
+                  <h3>{step.title}</h3>
+                  <p>{step.text}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="section section--mist" id="delivery">
+          <div className="section-shell">
+            <div className="section-copy section-copy--wide">
+              <div className="eyebrow-text">Delivery &amp; order rules</div>
+              <h2>Know the delivery details before you place your order.</h2>
+              <p>
+                Ghar Ka Khana serves nearby homes around Rouse Hill with straightforward
+                order minimums, clear delivery rules, and pickup options.
+              </p>
+            </div>
+
+            <div className="service-grid">
+              {serviceCards.map((item) => (
+                <article className="service-card" key={item.title}>
+                  <h3>{item.title}</h3>
+                  <p>{item.text}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="section" id="trust">
+          <div className="section-shell split-grid">
+            <div className="section-copy">
+              <div className="eyebrow-text">Why people will trust this kitchen</div>
+              <h2>Fresh cooking, thoughtful ingredients, and the comfort of home-style food.</h2>
+              <p>
+                Every part of the offer is built around food that feels familiar, balanced,
+                and dependable enough to order again.
+              </p>
+            </div>
+
+            <div className="trust-grid">
+              {trustPoints.map((item) => (
+                <article className="trust-card" key={item.title}>
+                  <h3>{item.title}</h3>
+                  <p>{item.text}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="section section--cream" id="gallery">
+          <div className="section-shell">
+            <div className="section-copy section-copy--wide">
+              <div className="eyebrow-text">Food gallery</div>
+              <h2>Warm, familiar meals made for real weekday cravings.</h2>
+              <p>
+                The menu is shaped around the kind of Indian food people reach for when
+                they want comfort, convenience, and a meal that feels homemade.
               </p>
             </div>
 
@@ -218,75 +390,77 @@ function App() {
           </div>
         </section>
 
-        <section className="section section--mist">
+        <section className="section section--mist" id="reviews">
           <div className="section-shell">
-            <div className="section-copy">
-              <div className="eyebrow-text">What makes it different</div>
-              <h2>Not typical takeout. Proper home food.</h2>
+            <div className="section-copy section-copy--wide">
+              <div className="eyebrow-text">Why locals choose Ghar Ka Khana</div>
+              <h2>Good food is only part of the reason people order again.</h2>
               <p>
-                The value here is not novelty. It is trust, daily comfort, and food
-                that feels made for a real household rather than a delivery funnel.
+                People come back for food that feels reliable, approachable, and easy to
+                fit into everyday life.
               </p>
             </div>
 
-            <div className="feature-grid">
-              {differenceCards.map((item) => (
-                <article className="feature-card" key={item.title}>
-                  <div className="feature-card__label">{item.label}</div>
-                  <h3>{item.title}</h3>
-                  <p>{item.text}</p>
+            <div className="reviews-grid">
+              {choiceCards.map((item) => (
+                <article className="review-card" key={item.title}>
+                  <div className="review-card__tag">{item.tag}</div>
+                  <h3 className="review-card__title">{item.title}</h3>
+                  <p className="review-card__text">{item.text}</p>
                 </article>
               ))}
             </div>
           </div>
         </section>
 
-        <section className="section">
-          <div className="section-shell">
-            <div className="cta-banner" id="join">
-              <div className="cta-grid">
-                <div>
-                  <div className="eyebrow-text">How to order</div>
-                  <h2>Join the WhatsApp group and stay updated on home-cooked meals.</h2>
-                  <p>
-                    This business currently runs through community engagement, so the
-                    website should drive one main action: joining the WhatsApp group for
-                    menu updates, availability, and orders.
-                  </p>
-                </div>
+        <section className="section" id="faq">
+          <div className="section-shell split-grid split-grid--faq">
+            <div className="section-copy">
+              <div className="eyebrow-text">Frequently asked questions</div>
+              <h2>Everything you may want to know before ordering.</h2>
+              <p>
+                Here are the quick answers to the most common questions about delivery,
+                minimum order, menu style, and ordering.
+              </p>
+            </div>
 
-                <div className="cta-panel">
-                  <h3>Primary action</h3>
-                  <p>Replace the placeholder below with the actual WhatsApp invite link.</p>
-                  <a className="button button--dark button--full" href={whatsappLink}>
-                    Join WhatsApp Group
-                  </a>
-                  <div className="cta-note">
-                    Tip: this should be the single most prominent CTA across the site.
-                  </div>
-                </div>
-              </div>
+            <div className="faq-list">
+              {faqs.map((item) => (
+                <details className="faq-item" key={item.question}>
+                  <summary>{item.question}</summary>
+                  <p>{item.answer}</p>
+                </details>
+              ))}
             </div>
           </div>
         </section>
 
-        <section className="section section--dark">
-          <div className="section-shell next-grid">
-            <div className="section-copy">
-              <div className="eyebrow-text">Suggested next content</div>
-              <h2>What this business still needs before the website is truly complete.</h2>
-              <p>
-                The launch page message is solid, but a higher-converting version still
-                needs a clearer operating model and stronger trust details.
-              </p>
-            </div>
-
-            <div className="next-list">
-              {nextSteps.map((item) => (
-                <div className="next-item" key={item}>
-                  {item}
+        <section className="section section--dark" id="join">
+          <div className="section-shell">
+            <div className="cta-banner">
+              <div className="cta-grid">
+                <div>
+                  <div className="eyebrow-text">Ready to order?</div>
+                  <h2>Choose your meals and send your order for pickup or local delivery.</h2>
+                  <p>
+                    Whether you are ordering for yourself, your family, or a busy weekday,
+                    Ghar Ka Khana makes it easy to enjoy fresh Indian food close to home.
+                  </p>
                 </div>
-              ))}
+
+                <div className="cta-panel">
+                  <h3>Quick order checklist</h3>
+                  <ul className="cta-list">
+                    <li>Pick your meals from the weekly menu.</li>
+                    <li>Make sure your order is at least $20.</li>
+                    <li>Delivery is free for orders above $40 within 5 km of Rouse Hill.</li>
+                  </ul>
+                  <a className="button button--dark button--full" href="#menu">
+                    View This Week&apos;s Menu
+                  </a>
+                  <div className="cta-note">Fresh menu updates are shared on WhatsApp.</div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -296,13 +470,20 @@ function App() {
         <div className="section-shell">
           <div>
             <div className="footer-brand">Ghar Ka Khana</div>
-            <div className="footer-copy">Indian home-style meals for the local community.</div>
+            <div className="footer-copy">
+              Indian home-style meals for families, students, and professionals around
+              Rouse Hill, NSW.
+            </div>
           </div>
           <div className="footer-copy">
-            Built to drive WhatsApp joins, trust, and local orders.
+            Delivery within 5 km of Rouse Hill. Minimum order $20. Free delivery above $40.
           </div>
         </div>
       </footer>
+
+      <a className="mobile-cta" href={primaryCtaLink}>
+        Start Your Order
+      </a>
     </div>
   );
 }
